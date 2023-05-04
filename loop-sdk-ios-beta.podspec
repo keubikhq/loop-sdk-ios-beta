@@ -1,8 +1,7 @@
 
 Pod::Spec.new do |spec|
-
   spec.name         = "loop-sdk-ios-beta"
-  spec.version      = "1.0.0"
+  spec.version      = "1.0.3"
   spec.summary      = "Loop SDK Framework"
 
   spec.description  = "Loop SDK specific description"
@@ -14,11 +13,15 @@ Pod::Spec.new do |spec|
 
   spec.platform     = :ios, "14.0"
 
-  spec.source       = { :git => "https://github.com/keubikhq/loop-sdk-ios-beta.git", :tag => "1.0.0" }
+  spec.source       = { :git => "https://github.com/keubikhq/loop-sdk-ios-beta.git", :tag => spec.version.to_s }
 
-   spec.source_files  = 'Loop-SDK.xcframework/**/*.{h,m,swift}'
+   # spec.source_files  = 'Loop-SDK.xcframework/**/*.{h,m,swift}'
  
-   # spec.vendored_frameworks = 'Loop-SDK.xcframework'
+   spec.vendored_frameworks = 'Loop-SDK.xcframework'
+
+spec.requires_arc = true
+spec.pod_target_xcconfig   = { 'VALID_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+    spec.user_target_xcconfig  = { 'VALID_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
   # spec.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
 
