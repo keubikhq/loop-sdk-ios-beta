@@ -1,1 +1,3 @@
-# loop-sdk-ios-beta
+# loop-sdk-package
+
+A description of this package.
